@@ -76,7 +76,6 @@ current = CurrentAccount("CA0001")
 
 savings.deposit(1000)
 current.deposit(2000)
-
 savings.withdraw(500)
 current.withdraw(3000)
 
