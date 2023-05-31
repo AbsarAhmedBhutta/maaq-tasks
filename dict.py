@@ -40,9 +40,9 @@ for key, vals in student.items():
 grades = {
     'math': 90,
     'english': 85,
-    'history': 95
+    'history': 95,
 }
-
+print(grades)
 # Merge the grades dictionary into the student dictionary.
 student.update(grades)
 print(student)
@@ -51,12 +51,9 @@ print(student)
 print(len(student))
 # Sort the keys of the merged_dict dictionary in ascending order and print them.
 
-sorted_s = sorted(student.keys())
-for key in sorted_s:
-    print(key)
+sorted_s = sorted(student.items(), reverse=True)
+print(sorted_s)
 
-# Here are some advanced-level dictionary practice tasks:
-#
 # Word Frequency Counter: Write a function that takes a string as input and returns a dictionary containing the
 # frequency of each word in the string. For example,
 # if the input is "I love to code, and coding is fun!", the output should be {'i': 1, 'love': 1, 'to': 1, 'code': 1,
@@ -75,25 +72,57 @@ for word in words:
 
 print(count)
 
-# Write a function named flatten_dictionary that takes a nested dictionary as input and returns a flattened
-# dictionary. The flattened dictionary should only contain keys that represent the full key path to the leaf nodes of
-# the original nested dictionary. The values in the flattened dictionary should be the corresponding values of the
-# leaf nodes.
+# Dictionary Comprehension: Write a Python program to create a new dictionary using dictionary comprehension,
+# given a list or another dictionary.
 
-dict = {
-    'a': {'b': {'c': 1, 'd': 2}, 'e': 3}, 'f': 4
+new_dict1 = {x: x ** 2 for x in range(12)}
+print(new_dict1)
+
+# Nested Dictionaries: Write a Python program to create and manipulate nested dictionaries, where the values of
+# certain keys are dictionaries themselves.
+nested_dict = {
+    'person1': {
+        'name': 'John',
+        'age': 30,
+        'address': {
+            'street': '123 Main St',
+            'city': 'New York',
+            'country': 'USA'
+        }
+    },
+    'person2': {
+        'name': 'Alice',
+        'age': 25,
+        'address': {
+            'street': '456 Park Ave',
+            'city': 'San Francisco',
+            'country': 'USA'
+        }
+    }
 }
 
+person1_name = nested_dict['person1']['name']
+print(person1_name)
 
-# Dictionary Merge: Write a function that takes multiple dictionaries as input and merges them into a single
-# dictionary. If there are any common keys, combine their values into a list. For example, if the input is {'a': 1,
-# 'b': 2}, {'b': 3, 'c': 4}, and {'c': 5, 'd': 6}, the output should be {'a': 1, 'b': [2, 3], 'c': [4, 5], 'd': 6}.
-#
-# Anagram Grouping: Given a list of words, group the anagrams together and return the groups as a dictionary.
-# Anagrams are words that have the same letters but in a different order. For example, if the input is ['eat', 'tea',
-# 'tan', 'ate', 'nat', 'bat'], the output should be {'aet': ['eat', 'tea', 'ate'], 'ant': ['tan', 'nat'],
-# 'abt': ['bat']}.
-#
-# Dictionary Inversion: Write a function that takes a dictionary as input and returns a new dictionary where the keys
-# and values are inverted. If multiple keys have the same value, combine them into a list. For example, if the input
-# is {'a': 1, 'b': 2, 'c': 2}, the output should be {1: 'a', 2: ['b', 'c']}.
+person2_address = nested_dict['person2']['address']
+print(person2_address)
+
+person2_address_modified = nested_dict['person2']['address']['country'] = 'pakistan'
+print(person2_address_modified)
+print(nested_dict)
+
+# Dictionary Conversion: Write a Python program to convert a dictionary into a list, tuple, or set, and vice versa.
+print(list(new_dict1.items()))
+
+# __________________________________________________-
+
+
+provinces = ['balochistan', 'sindh', 'kpk', 'punjab']
+capitals = ['quetta', 'karachi', 'peshawar', 'lhr']
+
+pakistan = {}
+
+for i, caps in zip(provinces, capitals):
+    pakistan[i] = caps
+
+print(pakistan)
