@@ -50,9 +50,9 @@ class SavingsAccount(BankAccount):
     def withdraw(self, amount):
         if amount > 0 and amount <= self.balance:
             self.balance -= amount
-            print(f"Withdrawal of {amount} from Savings Account {self.account_number}.")
+            print(f"Withdrawal of {amount} from Current Account {self.account_number}.")
         else:
-            print("Insufficient funds or invalid withdrawal amount.")
+            print("Invalid withdrawal amount.")
 
 
 class CurrentAccount(BankAccount):
@@ -64,7 +64,7 @@ class CurrentAccount(BankAccount):
             print("Invalid deposit amount.")
 
     def withdraw(self, amount):
-        if 0 < amount <= self.balance:
+        if amount > 0 and amount <= self.balance:
             self.balance -= amount
             print(f"Withdrawal of {amount} from Current Account {self.account_number}.")
         else:
@@ -74,10 +74,10 @@ class CurrentAccount(BankAccount):
 savings = SavingsAccount("SA0001")
 current = CurrentAccount("CA0001")
 
-savings.deposit(1000)
+savings.deposit(2000)
 current.deposit(2000)
-savings.withdraw(500)
-current.withdraw(3000)
+savings.withdraw(1000)
+current.withdraw(1000)
 
 print(savings.balance)
 print(current.balance)
