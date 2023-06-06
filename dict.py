@@ -117,12 +117,4 @@ print(list(new_dict1.items()))
 # __________________________________________________-
 
 
-provinces = ['balochistan', 'sindh', 'kpk', 'punjab']
-capitals = ['quetta', 'karachi', 'peshawar', 'lhr']
 
-pakistan = {}
-
-for i, caps in zip(provinces, capitals):
-    pakistan[i] = caps
-
-print(pakistan)

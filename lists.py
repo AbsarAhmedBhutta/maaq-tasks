@@ -147,15 +147,12 @@ print(task_10(li5, target))
 def flattened(nested_list):
     flat_list = []
     for l in nested_list:
-        for i in l:
-            flat_list.append(i)
-    return flat_list
+        for item in l:
+            flat_list.append(item)
 
 
-nested_list = [[4, 3, 2, 2, 4], [4, 5, 67, 88, 99, 00], [222, 33, 444, 555, 666, 777]]
-
-print(flattened(nested_list))
-
+nested_list = [[1, 2, 3, 4], [2, 1, 3, 2], [1, 2, 3, [1, 2, 4], 1]]
+print(nested_list)
 
 # Task 2: List Partitioning Write a function that takes in a list of integers and a target integer as input. The
 # function should return a new list that partitions the input list into two sublists: one containing all the numbers
@@ -181,17 +178,10 @@ list_l, list_g = result
 print(list_g)
 print(list_l)
 
-# Task 4: List Palindrome Write a function that takes in a list of strings and returns True if the list is a
-# palindrome (reads the same forwards and backwards), and False otherwise.
-l7 = ['rare']
-if l7[0] == l7[0][::-1]:
-    print('true')
-else:
-    print('false')
-
 
 # Task 5: List Intersection Write a function that takes in two lists of integers and returns a new list that contains
 # only the elements that are common to both input lists.
+
 def list_intersection(list1, list2):
     intersection = []
     for num in list1:
@@ -217,8 +207,3 @@ def merge(l1_sorted, l2_sorted):
 l1_sorted = [42, 43, 44, 56, 66]
 l2_sorted = [1, 2, 3, 4, 5]
 print(merge(l1_sorted, l2_sorted))
-
-
-
-
-

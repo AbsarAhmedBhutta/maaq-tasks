@@ -40,49 +40,40 @@ print(s.show())
 # operations like get, set, and evict based on a specific eviction policy.
 
 
-class DataRepository(Generic[T]):
+class cache(Generic[T]):
     def __init__(self):
-        self.data: Dict[Key, List[T]] = {}
+        self.cache: Dict[Key, List[T]] = {}
 
     def add_data(self, key: Key, item: T) -> None:
-        if key in self.data:
-            self.data[key].append(item)
+        if key in self.cache:
+            self.cache[key].append(item)
         else:
-            self.data[key] = [item]
+            self.cache[key] = [item]
 
     def remove_data(self, key: Key, item: T) -> None:
-        if key in self.data:
-            self.data[key].remove(item)
+        if key in self.cache:
+            self.cache[key].remove(item)
 
     def get_all_data(self) -> Dict[Key, List[T]]:
-        return self.data
+        return self.cache
 
     def search_by_id(self, key: Key) -> Dict[Key, List[T]]:
-        if key in self.data:
-            return self.data
+        if key in self.cache:
+            return self.cache
         else:
             print('obj not found')
 
     def remove_all(self, data):
-        self.data.clear()
+        self.cache.clear()
 
     def update(self, key: Key, updated_item: T) -> None:
-        if key in self.data:
-            self.data[key] = [updated_item]
+        if key in self.cache:
+            self.cache[key] = [updated_item]
         else:
             print('obj not found')
 
-    # def input_data(self, key: Key) -> None:
-    #     items = []
-    #     while True:
-    #         item = input("Enter an item (or 'done' to finish): ")
-    #         if item.lower() == 'done':
-    #             break
-    #         items.append(item)
-    #     self.add_data(key, items)
 
-
-repository = DataRepository()
+repository = cache()
 repository.add_data(1, "value1")
 repository.add_data(2, "value2")
 repository.add_data(3, [1, 2, 3, 4, 5])
@@ -97,3 +88,13 @@ print(repository.get_all_data())
 
 # repository.input_data(1)
 # print(repository.get_all_data())
+
+
+# def input_data(self, key: Key) -> None:
+#     items = []
+#     while True:
+#         item = input("Enter an item (or 'done' to finish): ")
+#         if item.lower() == 'done':
+#             break
+#         items.append(item)
+#     self.add_data(key, items)
