@@ -26,16 +26,6 @@ def select_sorting(t_nums, lst):
     return lst
 
 
-# lst = []
-# try:
-#     t_nums = int(input("Please enter the Total Number of List Elements: "))
-#     for i in range(t_nums):
-#         value = int(input("Please enter the Value of %d Element : " % i))
-#         lst.append(value)
-#     sorted_list = select_sorting(t_nums, lst)
-#     print("Element After Sorting List in Ascending Order is : ", sorted_list)
-# except:
-#     print("Error: You must enter a valid number.")
 
 
 for i in range(0, 10):

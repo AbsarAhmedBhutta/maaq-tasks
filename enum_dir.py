@@ -6,3 +6,4 @@ class direction(Enum):
     south = 2
     east = 3
     west = 4
+    pi = 3.14

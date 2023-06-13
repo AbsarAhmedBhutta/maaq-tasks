@@ -20,7 +20,7 @@ def fibonacci(terms):
             count += 1
 
 
-terms = 12
+terms = 5
 fibonacci(terms)
 
 # Palindrome Checker: Create a function that takes a string as input and checks if it is a palindrome
@@ -157,7 +157,6 @@ def sum_of_digits(number):
 number = 5555
 print(sum_of_digits(str(number)))
 
-# Binary Search: Implement a binary search algorithm to find the position of a target element in a sorted list.
 
 
 
